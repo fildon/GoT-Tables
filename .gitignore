@@ -1,0 +1,11 @@
+# Project dependencies
+node_modules
+
+# Build output
+dist
+
+# Local build cache
+.parcel-cache
+
+# test coverage reports
+coverage
