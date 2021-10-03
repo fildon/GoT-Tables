@@ -1,5 +1,4 @@
 import React from "react";
-import { filterBar } from "./filterBar.module.css";
 
 interface FilterBarProps {
   isLoading: boolean;
@@ -38,7 +37,7 @@ export const FilterBar = ({
   };
 
   return (
-    <form onSubmit={handleSubmit} className={filterBar}>
+    <form onSubmit={handleSubmit} className="filterBar">
       <label>
         Name:
         <input
@@ -90,7 +89,9 @@ export const FilterBar = ({
         />
       </label>
       <input type="submit" value="Apply filters" disabled={isLoading} />
-      <button onClick={clearFilters} disabled={isLoading}>Clear filters</button>
+      <button onClick={clearFilters} disabled={isLoading}>
+        Clear filters
+      </button>
     </form>
   );
 };

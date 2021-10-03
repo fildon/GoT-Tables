@@ -2,10 +2,11 @@
   "name": "gottables",
   "version": "1.0.0",
   "description": "A simple webapp to display information about Game of Thrones characters",
-  "main": "index.js",
   "scripts": {
-    "start": "parcel serve ./src/index.html",
-    "build": "parcel build ./src/index.html"
+    "prebuild": "rm -rf dist",
+    "build:js": "esbuild src/index.tsx --bundle --minify --outfile=dist/index.js",
+    "build:static": "cp -RT static ./dist",
+    "build": "npm run build:js && npm run build:static"
   },
   "repository": {
     "type": "git",
@@ -14,21 +15,14 @@
   "author": "Rupert Foggo McKay",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.13.10",
-    "@babel/preset-env": "^7.13.12",
-    "@babel/preset-react": "^7.12.13",
-    "@babel/preset-typescript": "^7.13.0",
-    "@types/react": "^17.0.3",
-    "@types/react-dom": "^17.0.3",
-    "@types/react-table": "^7.0.29",
-    "parcel": "^2.0.0-beta.2",
-    "postcss": "^8.2.8",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.2.3"
-  },
-  "dependencies": {
+    "@types/react": "^17.0.27",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-table": "^7.7.5",
+    "esbuild": "^0.13.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-table": "^7.6.3"
+    "react-table": "^7.7.0",
+    "regenerator-runtime": "^0.13.9",
+    "typescript": "^4.4.3"
   }
 }

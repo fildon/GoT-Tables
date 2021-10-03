@@ -1,5 +1,4 @@
 import React from "react";
-import { paginationBar } from "./paginationBar.module.css";
 
 interface PaginationBarProps {
   currentPageNumber: number;
@@ -19,7 +18,7 @@ export const PaginationBar = ({
   totalPages,
 }: PaginationBarProps) => {
   return (
-    <div className={paginationBar}>
+    <div className="paginationBar">
       <button
         onClick={() => setCurrentPageNumber(currentPageNumber - 1)}
         disabled={isLoading || !canPreviousPage}

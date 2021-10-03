@@ -68,7 +68,31 @@ article {
   margin: 2em 0;
 }
 
-table, th, td {
+table,
+th,
+td {
   border: 1px solid black;
   margin: 0 auto;
+}
+
+.emptyCell {
+  color: lightgrey;
+}
+
+table.loading {
+  opacity: 0.5;
+}
+
+.filterBar {
+  margin: 1em auto;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1280px;
+}
+
+.paginationBar {
+  margin: 1em auto;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1280px;
 }

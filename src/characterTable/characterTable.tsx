@@ -2,10 +2,9 @@ import React from "react";
 import { useTable } from "react-table";
 import { Character, requestCharacterPage } from "../api/characterAPI";
 import { PaginationBar } from "./paginationBar";
-import { emptyCell, loading } from "./characterTable.module.css";
 import { FilterBar } from "./filterBar";
 
-const EmptyCell = (): JSX.Element => <span className={emptyCell}>-</span>;
+const EmptyCell = (): JSX.Element => <span className="emptyCell">-</span>;
 
 const PrettyArrayCell = ({ children }: { children: string[] }): JSX.Element => {
   const nonEmptyArrayContent = children.filter((child) => child.length > 0);
@@ -159,13 +158,8 @@ export const CharacterTable = () => {
     []
   );
 
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = useTable({ columns, data: characters });
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    useTable({ columns, data: characters });
 
   return (
     <>
@@ -180,7 +174,7 @@ export const CharacterTable = () => {
         }}
       />
       <FilterBar isLoading={isLoading} setFilters={setFilters} />
-      <table {...getTableProps()} className={isLoading ? loading : ""}>
+      <table {...getTableProps()} className={isLoading ? "loading" : ""}>
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
