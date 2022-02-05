@@ -2,6 +2,8 @@
 
 A tabular frontend for [An API of Ice And Fire](https://anapioficeandfire.com/)
 
+Currently deployed here: [GoT Tables](https://fildon.me/GoT-Tables/)
+
 ## Getting Started
 
 Just:
